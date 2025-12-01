@@ -11,6 +11,7 @@ export const PRODUCTS = [
     cor: 'Branco',
     composicao: '100% Algodão',
     gradient: 'from-gray-100 to-gray-300',
+    //preco: 5.0,
     disponivel: true,
   },
   {

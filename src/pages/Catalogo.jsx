@@ -207,6 +207,15 @@ function Catalogo() {
                           <span className="font-medium">Composição:</span>
                         </p>
                         <p className="text-gray-400 text-xs ml-7">{produto.composicao}</p>
+                        {produto.preco && (
+                          <p className="flex items-center gap-2 mt-2">
+                            <span className="text-green-500">💰</span>
+                            <span className="font-medium">Preço:</span>
+                            <span className="text-green-400 font-bold">
+                              R$ {produto.preco.toFixed(2).replace('.', ',')}/m
+                            </span>
+                          </p>
+                        )}
                       </div>
 
                       {/* Botão */}
