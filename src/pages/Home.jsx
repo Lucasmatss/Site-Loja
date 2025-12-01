@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { AnimatedSection, AnimatedCard } from '../components/Animated'
@@ -50,33 +49,6 @@ function Home() {
 
     return () => clearInterval(timer)
   }, [isPaused]) // Pausa quando hover/focus
-
-  const categorias = [
-    {
-      nome: 'Malhas',
-      descricao: 'Malhas de alta qualidade para diversas confecções',
-      gradient: 'from-primary-cyan to-blue-500',
-      icon: '🧵',
-    },
-    {
-      nome: 'Tecidos Planos',
-      descricao: 'Tecidos planos para todas as necessidades',
-      gradient: 'from-blue-500 to-primary-blue',
-      icon: '📐',
-    },
-    {
-      nome: 'Estampados',
-      descricao: 'Estampas exclusivas e diversificadas',
-      gradient: 'from-blue-400 to-primary-blue',
-      icon: '🎨',
-    },
-    {
-      nome: 'Lisos',
-      descricao: 'Cores sólidas em diversas tonalidades',
-      gradient: 'from-blue-600 to-blue-800',
-      icon: '🎭',
-    },
-  ]
 
   const diferenciais = [
     {
@@ -180,7 +152,12 @@ function Home() {
               📦 Explorar Catálogo
             </ButtonPrimary>
 
-            <ButtonWhatsApp className="text-lg px-10 py-5">Fale Conosco</ButtonWhatsApp>
+            <ButtonWhatsApp
+              message="Olá! Vim pelo site e gostaria de mais informações."
+              className="text-lg px-10 py-5"
+            >
+              Fale Conosco
+            </ButtonWhatsApp>
           </div>
         </motion.div>
 
@@ -192,67 +169,6 @@ function Home() {
         >
           <FaChevronDown className="w-6 h-6 text-white/80" />
         </motion.div>
-      </section>
-
-      {/* Categorias com Cards 3D */}
-      <section className="py-32 bg-dark relative overflow-hidden">
-        {/* Background decorativo */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-primary-cyan rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-blue rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient-primary">
-              Nossas Categorias
-            </h2>
-            <p className="text-xl text-gray-400">Descubra a variedade perfeita para seu projeto</p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categorias.map((categoria, index) => (
-              <AnimatedCard key={index} delay={index * 0.1}>
-                <Link to="/catalogo" state={{ categoria: categoria.nome }}>
-                  <motion.div
-                    className={`relative h-80 bg-gradient-to-br ${categoria.gradient} rounded-3xl p-8 overflow-hidden group cursor-pointer`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {/* Efeito de brilho */}
-                    <motion.div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-
-                    {/* Ícone grande de fundo */}
-                    <div className="absolute top-4 right-4 text-8xl opacity-20">
-                      {categoria.icon}
-                    </div>
-
-                    {/* Conteúdo */}
-                    <div className="relative z-10 h-full flex flex-col justify-between">
-                      <div className="text-right">
-                        <span className="inline-block text-xs bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full">
-                          Clique para explorar
-                        </span>
-                      </div>
-                      <div>
-                        <div className="text-6xl mb-4">{categoria.icon}</div>
-                        <h3 className="text-3xl font-bold mb-3 text-white">{categoria.nome}</h3>
-                        <p className="text-white/90">{categoria.descricao}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </Link>
-              </AnimatedCard>
-            ))}
-          </div>
-
-          <AnimatedSection className="text-center mt-16" delay={0.4}>
-            <ButtonPrimary to="/catalogo" className="text-lg px-12 py-5">
-              🛍️ Ver Todos os Produtos
-            </ButtonPrimary>
-          </AnimatedSection>
-        </div>
       </section>
 
       {/* Diferenciais com Layout Assimétrico */}
