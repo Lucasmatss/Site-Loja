@@ -2,7 +2,7 @@
 
 // Assets
 export const ASSETS = {
-  LOGO: '/logo loja.jpeg',
+  LOGO: '/logo.jpeg',
 }
 
 // Animações
