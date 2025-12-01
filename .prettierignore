@@ -1,0 +1,27 @@
+# Build outputs
+dist
+build
+.vite
+
+# Dependencies
+node_modules
+package-lock.json
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+
+# Public assets
+public/images
+
+# Outros
+coverage
+*.md

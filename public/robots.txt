@@ -1,0 +1,15 @@
+# Robots.txt para LT Textil
+# https://lttextil.com.br
+
+User-agent: *
+Allow: /
+
+# Bloquear arquivos de assets não necessários para indexação
+Disallow: /assets/*.js
+Disallow: /assets/*.css
+
+# Sitemap
+Sitemap: https://lttextil.com.br/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga (opcional)
+Crawl-delay: 1

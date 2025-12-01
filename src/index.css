@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-white antialiased;
+  }
+
+  /* Skip link para acessibilidade */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .sr-only:focus,
+  .sr-only:active {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+@layer components {
+  /* Classes de gradiente reutilizáveis */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-cyan to-primary-blue bg-clip-text text-transparent;
+  }
+
+  .text-gradient-full {
+    @apply bg-gradient-to-r from-primary-cyan via-primary-blue to-white bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary-cyan to-primary-blue;
+  }
+
+  .bg-gradient-card {
+    @apply bg-gradient-to-br from-primary-cyan/20 to-primary-blue/20;
+  }
+
+  /* Classes de card reutilizáveis */
+  .card-base {
+    @apply bg-dark-secondary rounded-lg border border-gray-800;
+  }
+
+  .card-hover {
+    @apply card-base hover:border-primary-cyan transition-colors duration-300;
+  }
+
+  /* Animações otimizadas */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
